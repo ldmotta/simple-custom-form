@@ -1,0 +1,45 @@
+<div class="wrap">
+<h2>Simple Custom Forms</h2>
+{UPDATED}
+<form name="rvg_config_form" method="post">
+<input type="hidden" name="action" value="{ACTION}" />
+<input type="hidden" name="form" value="{ID_FORM}" />
+<!--{ERROS}-->
+<table class="form-table">
+<tbody>
+<tr>
+<th scope="row"><label for="description">Descrição</label></th>
+<td><input type="text" name='description' id='description' size="60" value="{DESCRIPTION}" /><br />
+<span class="description">Descrição do formulário</span>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="source_form">HTML do formulário</label></th>
+<td><textarea name='source_form' id='source_form' cols="80" rows="10">{SOURCE_FORM}</textarea><br />
+<span class="description">Insira o html do formulário exatamente como quer que apareça</span>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="source_email">Corpo do email</label></th>
+<td><textarea name="source_email" id="source_email" cols="80" rows="10">{SOURCE_EMAIL}</textarea><br />
+<span class="description">Substitua as tags entre [ ] pelos names dos objetos de formulário. Ex. Se você tem dois campos<br />
+como &lt;input type='text' name='name'&gt; e &lt;input type='text' name='email'&gt;, você poderia incluir o<br /> seguinte corpo
+de email: Olá [name], seu email é [email]</span>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="receiver">E-mail de destino</label></th>
+<td><input type="text" name='receiver' id='receiver' value="{RECEIVER}" /><br />
+<span class="description">E-mail para onde serão enviados os formulários</span>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="submit">
+<input type="submit" value="Salvar alterações" class="button-primary" name="Submit">
+</p>
+</form>
+<!--<div class='forms'>-->
+<!--{FORMS}-->
+<!--</div>-->
+</div>
