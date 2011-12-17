@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: WP Simple Custom Form
+Plugin Name: Wp Simple Custom Form
 Plugin URI: http://motanet.com.br/wp-simple-custom-form/
 Description: Cria formulários customizados, em uma página ou post, exatamente como descrito pelo desenvolvedor.
 Author: Luciano D. Mota

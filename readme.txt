@@ -51,6 +51,7 @@ Of course, visit [WP Simple Custom Form Home Page](http://motanet.com.br/wp-simp
 
 = 1.0 =
 * Criação do plugin para criar formulários customizados.
+* Corrigido o problema de não renderizar o html na pág ou post 
 
 == Screenshots ==
 1. Menu na área administrativa
