@@ -29,7 +29,11 @@ Poderão ser inseridos quantos formulários forem necessários.
 
 2. Ative o plugin na interface de 'Plugins' do WordPress.
 
-3. Na Aba de opções configure/adicione novos formulários.
+3. Na Aba de opções configure/adicione novos formulários, preenchendo as seguintes informações:
+   - Descrição: Descrição simples para identificação do formulário na lista de formulários.
+   - HTML do formulário: Marcação HTML do formulário que será utilizado na página ou post, não precisa adicionar a tag <form> nem botão submit, apenas crie as marcações para os campos do formulário com div, label, input etc.
+   - Corpo do e-mail: Texto que será enviado no corpo do e-mail para o administrador.
+   - E-mail de destino: E-mail para onde se quer enviar os dados do formulário digitados pelo usuário.
 
 4. Crie uma página/post e inclua a marcação [wp_custom_form x] onde 'x' é o número do formulário adicionado pelo plugin.
 
