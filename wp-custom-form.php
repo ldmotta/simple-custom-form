@@ -123,10 +123,10 @@ class wpCustomForm {
 
             $im = imagemail::getInstance();
             
-            $html = sprintf( "%s", $source_email );            
+            $html = sprintf( "%s", $source_email );
 
             //Setando as variáveis para envio do email
-            $im->add_from( "Fotolab Portal <dani@pensaweb.com.br>" );
+            $im->add_from( "Meu site <{$_POST['email']}>" );
             
             $im->add_to( "Destinatário <{$receiver}>" );
             
@@ -136,13 +136,13 @@ class wpCustomForm {
             
             $im->set_style( "simple" );            
             
-            $im->add_message( $html );     
+            $im->add_message( html_entity_decode($html, ENT_QUOTES) );
 
             try {
             
                 $enviado = $im->send();
             
-                if ( $enviado ) $message = "Mensagem enviada com sucesso! obrigado por entrar em contato.";
+                if ( $enviado ) $message = 'Mensagem enviada com sucesso! obrigado por entrar em contato.';
             
             } catch ( Exception $e ) { $enviado = 0; }
             
@@ -159,18 +159,18 @@ class wpCustomForm {
 		$content_form = stripcslashes( $form->source_form );
 		
 		$html = '';
-		
-		if ( $message != '' ) {
-		    
-		    $html .= "<div class='success'><p>{$message}</p></div>";   
-		    
-		}
-		
-		$html .= '<form name="wp_custom_form" class="form-contato" method="post">';
+
+		$html .= '<form id="frm-contato" name="wp_custom_form" class="form-contato span7" method="post">';
+
+        if ( $message != '' ) {
+
+            $html .= "<div class='alert alert-success'><p>{$message}</p></div>";
+
+        }
 		
 		$html .= sprintf( '<input type="hidden" name="id_form" value="%d">%s</form>', $form->id_form, $content_form );
 	
-		return $html;
+		return html_entity_decode($html, ENT_QUOTES);
 	
 	}
 	
@@ -264,11 +264,11 @@ eof;
 	
 		add_menu_page( "WP Custom Form", "Custom Forms", "level_10", "wp-custom-form", array( "wpCustomForm", "listForms" ) );
 
-		add_submenu_page( "wp-custom-form", "Wp Custom Form", 'Adicionar novo', "level_0", "add_forms", array( "wpCustomForm", "abaOpcoes" ) );
+		add_submenu_page( "wp-custom-form", "Wp Custom Form", 'Adicionar novo', "level_10", "add_forms", array( "wpCustomForm", "addForm" ) );
 	
 	}
 	
-	function abaOpcoes () {
+	function addForm () {
 
 		//Predefinidos
 		$templateVars['{UPDATED}'] = "";
