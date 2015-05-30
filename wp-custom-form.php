@@ -396,5 +396,3 @@ register_activation_hook( $mppPluginFile, array( 'wpCustomForm', 'instalar' ) );
 // filters: init, the_content,
 /** Funcao de inicializacao */
 add_filter( 'init', 'wpCustomForm::inicializar' );
-
-?>
