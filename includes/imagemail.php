@@ -198,4 +198,3 @@ class imagemail {
         trigger_error('Deserializing não é permitido.', E_USER_ERROR);
     }
 }
-?>
